@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Little Lemon</title>
+    <link rel="stylesheet" type="text/css" href="design.css">
+  </head>
+
+  <body>
+    <header>
+        <div class="header-container">
+          <h1>Little Lemon</h1>
+          <nav>
+            <ul>
+              <li><a href="../">Home</a></li>
+              <li><a href="#">Menu</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    
+    <main>
+
+        <form action="" , method="post">
+
+            {% csrf_token %}
+            {{contact_form.as_p}}
+            <button type="submit"> send </button>
+        </form>
+
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+          <p>&copy; 2023 Little Lemon Restaurant. All rights reserved.</p>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Site Map</a></li>
+          </ul>
+        </div>
+      </footer>
+  </body>
+</html>

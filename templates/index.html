@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Little Lemon</title>
+    <link rel="stylesheet" type="text/css" href="design.css">
+  </head>
+
+  <body>
+    <header>
+        <div class="header-container">
+          <h1>Little Lemon</h1>
+          <nav>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Menu</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="contact">About</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    
+    <main>
+        <hr>
+        <br>
+
+        <h1> {{Restaurant.name}} </h1>
+        <hr>
+        <h4> {{Restaurant.description}} </h4>
+        <h4> {{Restaurant.working_hours}} </h4>
+        <a href="{{Restaurant.facebook_link}}"> facebook </a>
+        <h4> {{Restaurant.phone}} </h4>
+    
+        <br><hr>
+        
+        <form method="post" , action="">
+            {% csrf_token %}
+            {{CForm.as_p}}
+            
+            <button type="submit"> send </button>
+        </form>
+
+        <br><br><br><hr><br><br><br>
+
+        <form action="" , method="post">
+          {{testForm.as_p}}
+        </form>
+
+        <br>
+        <hr>
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+          <p>&copy; 2023 Little Lemon Restaurant. All rights reserved.</p>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Site Map</a></li>
+          </ul>
+        </div>
+      </footer>
+  </body>
+</html>
