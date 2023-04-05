@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+    <h1 align="center" > Welcome to {{Restaurant.name}} Restaurant </h1>
+    <p align="center"> {{Restaurant.addresse}} </p>
+    <p align="center"> {{Restaurant.description}} </p>
+    <p align="center"> Working hours : {{Restaurant.working_hours}} </p>
+
+    <br>
+    <p> {{Restaurant.email}} </p>
+    <p> {{Restaurant.phone}} </p>
+    <br>
+
+
+    <div align="center">
+        <hr>
+        <br>
+        <h3>Our Chefs</h3>
+        {% for chef in Restaurant.chefs.all %}
+
+            <p>{{chef.name}}</p>
+            <img src="{{chef.photo.url}}" alt="chef.name" , width="250" , height="200">
+            <br>
+        {% endfor %}
+
+        <br><br><br><hr>
+
+        <h3>Our Staffs</h3>
+        {% for staff in Restaurant.staffs.all %}
+
+            <p>{{staff.name}}</p>
+            <img src="{{staff.photo.url}}" alt="staff.name" , width="250" , height="200">
+            <br>
+        {% endfor %}
+
+        <br><br><br><hr>
+
+        <h3>Rewards</h3>
+        {% for reward in Restaurant.rewards.all %}
+
+            <p>{{reward.name}}</p>
+            <p> {{reward.date}} </p>
+            <br>
+        {% endfor %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+
+    {% for blog in blogs %}
+        <h3> {{blog.title}} </h3>
+        <p>{{blog.published_at}}</p>
+        <p> {{blog.publisher_text}} </p>
+        <img src="{blog.photo.url}" width="250" height="200">
+
+        <br><br><br><hr><br><br><br>
+    {% endfor %}
+
+{% endblock %}

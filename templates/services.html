@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+
+    {% for service in services %}
+        <h3> {{service.title}} </h3>
+        <p> {{service.description}} </p>
+        <img src="{{service.photo.url}}" alt="{{service.title}}" width="200" height="200">
+    {% endfor %}
+    
+{% endblock %}

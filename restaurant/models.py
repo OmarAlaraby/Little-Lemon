@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import date
 
 
 class Chef(models.Model):
@@ -6,7 +7,7 @@ class Chef(models.Model):
     position = models.CharField(max_length=30 , default='')
     description = models.TextField(default='')
     photo = models.ImageField(default='' , upload_to='testImages/%y/%m/%d')
-    restaurant = models.ForeignKey('Restaurant' , on_delete=models.CASCADE, default='')
+    restaurant = models.ForeignKey('Restaurant' , on_delete=models.CASCADE, default='' , related_name='chefs')
 
     def __str__(self):
         return self.name
@@ -14,8 +15,8 @@ class Chef(models.Model):
 
 class Awards(models.Model):
     name = models.CharField(max_length=50 , default='')
-    date = models.TimeField(auto_now=True)
-    restaurant = models.ForeignKey('Restaurant' , on_delete=models.CASCADE, default='')
+    date = models.DateField(default=date.today)
+    restaurant = models.ForeignKey('Restaurant' , on_delete=models.CASCADE, default='' , related_name='rewards')
 
     def __str__(self):
         return self.name
@@ -36,7 +37,8 @@ class Staff(models.Model):
     name = models.CharField(max_length=30 , default='')
     salary = models.IntegerField(default=0)
     working_since = models.TimeField(auto_now=True)
-    restaurant = models.ForeignKey('Restaurant' , on_delete=models.CASCADE, default='')
+    restaurant = models.ForeignKey('Restaurant' , on_delete=models.CASCADE, default='', related_name='staffs')
+    photo = models.ImageField(upload_to='testImages/staff/%y/%m/%d', default='')
 
     def __str__(self):
         return self.name
