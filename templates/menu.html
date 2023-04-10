@@ -2,14 +2,18 @@
 
 {% block page_content %}
 
-<h2> <u> Menu </u> </h2>
 
-    {% for item in menu %}
-        <p> {{item.name}} </p>
-        <p> {{item.description}} </p>
-        <p> {{item.price}} </p>
-        <img src="item.photo.url" alt="{{item.name}}" width="250" , height="200">
+    <center>
+        <h1>  Menu  </h1>
+        <br><br><br>
 
-        <br><hr><br>
-    {% endfor %}
+        {% for item in menu %}
+            <p> {{item.name}} </p>
+            <p> {{item.description}} </p>
+            <p> {{item.price}} </p>
+            <img src="{{item.photo.url}}" alt="{{item.name}}" width="250" , height="200">
+
+            <br><hr><br>
+        {% endfor %}
+    </center>
 {% endblock %}
